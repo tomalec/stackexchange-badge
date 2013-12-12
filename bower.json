@@ -1,0 +1,20 @@
+{
+  "name": "stackexchange-badge",
+  "version": "0.0.1",
+  "description": "`<se-badge>` is a [Custom Element](https://github.com/polymer/CustomElements) with [StackExchange](http://api.stackexchange.com/) ([StackOverflow](http://stackoverflow.com/), [ServerFault](http://serverfault.com/), ...) user badge, that provides basic profile summary (gravatar, username, reputation, badge count).",
+  "authors": [
+    "Tomek Wytrębowicz (https://github.com/tomalec)"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer-ajax": "Polymer/polymer-ajax",
+    "polymer": "Polymer/polymer#~0.1.0"
+  }
+}

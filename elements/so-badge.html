@@ -1,0 +1,96 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/polymer-ajax/polymer-ajax.html">
+
+<polymer-element name="se-badge" noscript attributes="userId site">
+	<template>
+		<style>
+			.logo{
+				float: left;
+				padding: 8px 4px;
+			}
+			a:visited {
+				color: #4a6b82;
+			}
+			a {
+				color: #0077cc;
+				text-decoration: none;
+				cursor: pointer;
+			}
+			a:hover {
+				text-decoration: underline;
+			}
+			.user-info{
+				line-height: 1;
+				font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+			}
+			.user-gravatar32{
+				float: left;
+				margin: 0;
+				padding: 0;
+			}
+			.user-info .user-details {
+				float: left;
+				margin-left: 5px;
+				width: 145px;
+				overflow: hidden;
+				white-space: nowrap;
+			}
+			.user-details {
+				color: #888;
+				line-height: 17px;
+			}
+			.reputation-score {
+				font-weight: bold;
+				color: #444;
+				font-size: 100%;
+				margin-right: 2px;
+			}
+			.badge{
+				font-weight: bold;
+			}
+			.badge1{
+				color: #FFCC00;
+			}
+			.badge2{
+				color: #C5C5C5;
+			}
+			.badge3{
+				color: #CC9966;
+			}
+		</style>
+		<div class="user-info">
+			<img class="logo" src="http://cdn.sstatic.net/stackoverflow/img/favicon.ico"/>
+		    <div class="user-gravatar32">
+		        <a href="{{resp.items.0.link}}"><div class="gravatar-wrapper-32"><img src="{{resp.items.0.profile_image}}" alt="" width="32" height="32"></div></a>
+		    </div>
+		    <div class="user-details">
+		        <a href="{{resp.items.0.link}}">{{resp.items.0.display_name}}</a><br/>
+		        <span class="reputation-score" title="reputation score ">{{resp.items.0.reputation}}</span>
+		        <template if="{{resp.items.0.badge_counts.gold}}">
+			        <span title="{{resp.items.0.badge_counts.gold}} gold badges">
+			        	<span class="badge badge1">•</span>
+			        	<span class="badgecount">{{resp.items.0.badge_counts.gold}}</span>
+			        </span>
+			    </template>
+		        <template if="{{resp.items.0.badge_counts.silver}}">
+		        <span title="{{resp.items.0.badge_counts.silver}} silver badges">
+		        	<span class="badge badge2">•</span>
+		        	<span class="badgecount">{{resp.items.0.badge_counts.silver}}</span>
+		        </span>
+			    </template>
+		        <template if="{{resp.items.0.badge_counts.bronze}}">
+		        <span title="{{resp.items.0.badge_counts.bronze}} bronze badges">
+		        	<span class="badge badge3">•</span>
+		        	<span class="badgecount">{{resp.items.0.badge_counts.bronze}}</span>
+		        </span>
+			    </template>
+		    </div>
+		</div>
+	<polymer-ajax 
+	    url="http://api.stackexchange.com/2.1/users/{{userId}}"
+		params='{"site":"{{site || "stackoverflow"}}"}'
+	    auto 
+	    response="{{resp}}"
+	    handleAs="json"></polymer-ajax>
+	</template>
+</polymer-element>
