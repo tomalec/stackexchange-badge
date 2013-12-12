@@ -1,7 +1,7 @@
 {
   "name": "stackexchange-badge",
   "version": "0.0.1",
-  "description": "`<se-badge>` is a [Custom Element](https://github.com/polymer/CustomElements) with [StackExchange](http://api.stackexchange.com/) ([StackOverflow](http://stackoverflow.com/), [ServerFault](http://serverfault.com/), ...) user badge, that provides basic profile summary (gravatar, username, reputation, badge count).",
+  "description": "<se-badge> is a Custom Element with StackExchange (StackOverflow, ServerFault, ...) user badge, that provides basic profile summary (gravatar, username, reputation, badge count).",
   "authors": [
     "Tomek Wytrębowicz (https://github.com/tomalec)"
   ],
