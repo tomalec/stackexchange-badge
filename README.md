@@ -4,6 +4,10 @@
 
 > Maintained by [Tomek Wytrębowicz](https://github.com/tomalec).
 
+## Demo
+
+> [Check it live](http://tomalec.github.io/stackexchange-badge).
+
 ## Usage
 
 1. Import Web Components' polyfill:
