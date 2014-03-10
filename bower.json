@@ -16,5 +16,8 @@
   "dependencies": {
     "polymer-ajax": "Polymer/polymer-ajax",
     "polymer": "Polymer/polymer#~0.1.0"
-  }
+  },
+  "keywords": [
+    "web-components"
+  ]
 }
